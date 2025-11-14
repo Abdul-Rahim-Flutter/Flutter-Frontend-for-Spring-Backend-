@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restful_api_practical/ApiService.dart';
+import 'package:restful_api_practical/ErrorResponse.dart';
 import 'package:restful_api_practical/formPage.dart';
 
 class Myhomepage extends StatefulWidget {
@@ -32,6 +33,9 @@ class _MyhomepageState extends State<Myhomepage> {
         _isLoading = false;
         _hasError = true;
       });
+      final message=e is ErrorResponse ? e.message : 'An error occurred';
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(message)));
     }
   }
 
@@ -58,8 +62,18 @@ class _MyhomepageState extends State<Myhomepage> {
       
       body: _isLoading
           ? Center(child: CircularProgressIndicator())
-          : _hasError
-          ? Center(child: Text('Error loading posts'))
+          : _hasError 
+          ? Column(
+            children: [
+              Center(child: Text('An error occurred while fetching posts.')),
+              SizedBox(height: 20,),
+              ElevatedButton(
+                onPressed: _loadPosts,
+                child: Text('Retry'),
+              ),
+
+            ],
+          )
           : ListView.builder(
               itemCount: _posts.length,
               itemBuilder: (context, index) {

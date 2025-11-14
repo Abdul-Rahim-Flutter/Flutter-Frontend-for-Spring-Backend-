@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restful_api_practical/ApiService.dart';
+import 'package:restful_api_practical/ErrorResponse.dart';
 
 class Formpage extends StatefulWidget {
   const Formpage({super.key});
@@ -29,9 +30,11 @@ class _FormpageState extends State<Formpage> {
       setState(() {
         _isSubmitting = false;
       });
+
+      final message= e is ErrorResponse ? e.message : 'An error occurred';
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text('Failed to create post')));
+      ).showSnackBar(SnackBar(content: Text(message)));
     }
   }
 

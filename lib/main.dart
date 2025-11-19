@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restful_api_practical/MyHomePage.dart';
+import 'package:restful_api_practical/screens/MyHomePage.dart';
 
 void main() {
   runApp(const MyApp());

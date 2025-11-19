@@ -1,7 +1,7 @@
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:restful_api_practical/ErrorResponse.dart';
+import 'package:restful_api_practical/models/ErrorResponse.dart';
 
 class ApiService {
   // //get request to fetch posts

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restful_api_practical/ApiService.dart';
-import 'package:restful_api_practical/ErrorResponse.dart';
-import 'package:restful_api_practical/formPage.dart';
+import 'package:restful_api_practical/services/ApiService.dart';
+import 'package:restful_api_practical/models/ErrorResponse.dart';
+import 'package:restful_api_practical/screens/formPage.dart';
 
 class Myhomepage extends StatefulWidget {
   const Myhomepage({super.key});

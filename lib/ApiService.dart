@@ -48,8 +48,8 @@ class ApiService {
         Uri.parse('$baseUrl?page=$page&limit=$limit'),
         //for security issues, we are going to add Authorization header
         headers: {
-          'Authorization':
-              'Bearer 4f4028a124a3fc989921b366248f23de7de752db7bb7270153b66bd0133c0d46',
+          //'Authorization':
+          //    'Bearer Your_Access_Token_Here',
           'Content-Type': 'application/json',
         },
       );
@@ -78,8 +78,8 @@ class ApiService {
     final response = await http.post(
       Uri.parse(baseUrl),
       headers: {
-        'Authorization':
-            'Bearer 4f4028a124a3fc989921b366248f23de7de752db7bb7270153b66bd0133c0d46',
+        //'Authorization':
+        //   'Bearer Your_Access_Token_Here',
         'Content-Type': 'application/json',
       },
       body: jsonEncode({'title': title, 'body': body}),

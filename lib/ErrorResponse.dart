@@ -1,12 +1,13 @@
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-
+//this is model class
 class ErrorResponse {
   final String message;
   ErrorResponse({required this.message});
 }
 
+//this is logic class to handle errors
 class ErrorHandler {
   static Future<void> handle(dynamic error, dynamic response) async {
     if (response != null) {

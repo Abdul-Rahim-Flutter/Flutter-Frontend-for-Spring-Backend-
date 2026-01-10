@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restful_api_practical/screens/MyHomePage.dart';
+import 'package:taskmanager_client/screens/MyHomePage.dart';
 
 //we haven't used the testing and debugging for this application project
 void main() {
